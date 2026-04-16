@@ -1779,9 +1779,9 @@
   },
   "dd9d285e-e62c-49cd-94d9-cc5ffe8bc671": {
     "visitorId": "dd9d285e-e62c-49cd-94d9-cc5ffe8bc671",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
     "firstVisitedAt": "2026-04-10T18:29:21.479Z",
-    "lastVisitedAt": "2026-04-10T18:56:41.543Z",
+    "lastVisitedAt": "2026-04-16T02:33:30.028Z",
     "lastIp": "::1",
     "ipAddresses": [
       "::1"
@@ -1790,8 +1790,8 @@
     "hasStartedGame": true,
     "hasPlacedGuessPin": true,
     "hasSubmittedGuess": true,
-    "lastPotholeId": "pot10",
-    "lastPotholeDate": "2026-03-27",
+    "lastPotholeId": "pot8",
+    "lastPotholeDate": "2026-04-15",
     "events": [
       {
         "type": "visited",
@@ -1892,6 +1892,44 @@
         "distanceMiles": 6.237418928983098,
         "guessLat": 36.75942282993723,
         "guessLng": -119.75337982177736
+      },
+      {
+        "type": "visited",
+        "at": "2026-04-16T02:33:14.497Z",
+        "ip": "::1",
+        "potholeId": "pot8",
+        "potholeDate": "2026-04-15",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-04-16T02:33:27.637Z",
+        "ip": "::1",
+        "potholeId": "pot8",
+        "potholeDate": "2026-04-15",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-04-16T02:33:27.639Z",
+        "ip": "::1",
+        "potholeId": "pot8",
+        "potholeDate": "2026-04-15",
+        "isPastPlay": false,
+        "guessLat": 36.77039704612862,
+        "guessLng": -119.77466583251955
+      },
+      {
+        "type": "submitted_guess",
+        "at": "2026-04-16T02:33:30.028Z",
+        "ip": "::1",
+        "potholeId": "pot8",
+        "potholeDate": "2026-04-15",
+        "isPastPlay": false,
+        "score": 3731,
+        "distanceMiles": 2.538369740935365,
+        "guessLat": 36.77039704612862,
+        "guessLng": -119.77466583251955
       }
     ]
   },
