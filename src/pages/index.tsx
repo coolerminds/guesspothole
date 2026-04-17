@@ -1,7 +1,26 @@
 import GameContainer from "@/components/GameContainer";
+import { resolveSiteUrl } from "@/lib/siteUrl";
+import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Head from "next/head";
 
-export default function Home() {
+export const getServerSideProps: GetServerSideProps<{
+  ogImageUrl: string;
+  siteUrl: string;
+}> = async ({ req }) => {
+  const siteUrl = resolveSiteUrl(req);
+
+  return {
+    props: {
+      ogImageUrl: `${siteUrl}/og-image.jpg`,
+      siteUrl,
+    },
+  };
+};
+
+export default function Home({
+  ogImageUrl,
+  siteUrl,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <Head>
@@ -18,10 +37,10 @@ export default function Home() {
           property="og:description"
           content="Can you guess where Fresno's worst potholes are? Play the daily guessing game — Better Roads. Safe Streets."
         />
-        <meta property="og:image" content="http://147.182.248.128/og-image.jpeg" />
+        <meta property="og:image" content={ogImageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:url" content="http://147.182.248.128" />
+        <meta property="og:url" content={siteUrl} />
         <meta property="og:site_name" content="Guess The Pothole!" />
 
         {/* Twitter Card */}
@@ -31,7 +50,7 @@ export default function Home() {
           name="twitter:description"
           content="Can you guess where Fresno's worst potholes are? Play the daily guessing game — Better Roads. Safe Streets."
         />
-        <meta name="twitter:image" content="http://147.182.248.128/og-image.jpeg" />
+        <meta name="twitter:image" content={ogImageUrl} />
       </Head>
       <GameContainer />
     </>

@@ -20,7 +20,7 @@ export const potholes: Pothole[] = [
     lat: 36.829444,
     lng: -119.866806,
     hint: "On Fig Garden Loop",
-    date: "2026-04-08",
+    date: "2026-04-24",
   },
   {
     id: "pot2",
@@ -28,7 +28,7 @@ export const potholes: Pothole[] = [
     lat: 36.7943366467119,
     lng: -119.77223548832579,
     hint: "Near Fresno Ag Hardware",
-    date: "2026-04-09",
+    date: "2026-04-23",
   },
   {
     id: "pot3",
@@ -36,7 +36,7 @@ export const potholes: Pothole[] = [
     lat: 36.760435,
     lng: -119.772273,
     hint: "Near Romain Park",
-    date: "2026-04-10",
+    date: "2026-04-22",
   },
   {
     id: "pot4",
@@ -44,7 +44,7 @@ export const potholes: Pothole[] = [
     lat: 36.835627,
     lng: -119.91927,
     hint: "Parallel to Highway 99",
-    date: "2026-04-11",
+    date: "2026-04-21",
   },
   {
     id: "pot5",
@@ -52,7 +52,7 @@ export const potholes: Pothole[] = [
     lat: 36.842648,
     lng: -119.801657,
     hint: "Near Porsche Fresno",
-    date: "2026-04-12",
+    date: "2026-04-20",
   },
   {
     id: "pot6",
@@ -60,7 +60,7 @@ export const potholes: Pothole[] = [
     lat: 36.842661,
     lng: -119.794709,
     hint: "Near Pinedale Elementary",
-    date: "2026-04-13",
+    date: "2026-04-19",
   },
   {
     id: "pot7",
@@ -68,7 +68,7 @@ export const potholes: Pothole[] = [
     lat: 36.742827,
     lng: -119.790468,
     hint: "Near Dicky Playground",
-    date: "2026-04-14",
+    date: "2026-04-18",
   },
   {
     id: "pot8",
@@ -76,7 +76,7 @@ export const potholes: Pothole[] = [
     lat: 36.735877,
     lng: -119.790356,
     hint: "Near Fresno County Superior Court",
-    date: "2026-04-15",
+    date: "2026-04-17",
   },
 ];
 

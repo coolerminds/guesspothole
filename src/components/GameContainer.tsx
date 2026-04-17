@@ -37,11 +37,11 @@ function getShareMessage(score: number, distance: number, isPastPlay: boolean, u
 
   return [
     scoreEmoji,
-    `I scored ${score.toLocaleString()} / 5,000 on GuessThePothole.com.`,
+    `I scored ${score.toLocaleString()} / 5,000 on [URL].`,
     "",
     `I was ${distance.toFixed(2)} miles away from ${challengeLabel}.`,
     "",
-    `Can you beat me? Try it here -> ${url}`,
+    `Can you beat me? Try it here -> [URL]`,
   ].join("\n");
 }
 
