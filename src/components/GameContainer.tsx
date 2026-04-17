@@ -41,7 +41,7 @@ function getShareMessage(score: number, distance: number, isPastPlay: boolean, u
     "",
     `I was ${distance.toFixed(2)} miles away from ${challengeLabel}.`,
     "",
-    `Can you beat me? Try it here -> [URL]`,
+    `Can you beat me? Try it here -> ${url} [URL for testing]`,
   ].join("\n");
 }
 
@@ -280,11 +280,11 @@ export default function GameContainer() {
 
   const shareFeedback =
     shareState === "shared"
-      ? "Share sheet opened. Send it to Messages or anywhere else."
+      ? "Send it to Messages or anywhere else."
       : shareState === "copied"
-      ? "Score text copied. Paste it into Messages, Notes, or social."
+      ? "Copied. Paste it into Messages, Notes, or social."
       : shareState === "error"
-      ? "Sharing is unavailable on this browser right now."
+      ? "Sharing is unavailable"
       : "";
 
   function renderShareActions() {
