@@ -445,6 +445,14 @@ a {
   gap: var(--sp-2);
 }
 
+.game__share-actions {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+}
+
 /* Shared notice / message block */
 .leaderboard__past-notice,
 .leaderboard__subscribe-error {
@@ -713,6 +721,8 @@ a {
   gap: var(--sp-3);
   min-width: 260px;
   padding: 18px 30px;
+  border: 0;
+  border-radius: var(--radius-md);
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 700;
@@ -720,6 +730,13 @@ a {
   background: linear-gradient(135deg, #ffd363 0%, #f5bb2f 100%);
   color: var(--navy-deep);
   box-shadow: 0 0 22px rgba(245, 206, 83, 0.2);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.game__share-btn--x {
+  background: linear-gradient(135deg, #1d2538 0%, #091120 100%);
+  color: var(--surface);
 }
 
 .game__share-feedback {
@@ -731,6 +748,18 @@ a {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .game__share-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .game__share-btn {
+    width: 100%;
+    min-width: 0;
+  }
 }
 
 .history-card__desc {

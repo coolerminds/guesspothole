@@ -29,7 +29,7 @@ function getScoreEmoji(score: number) {
   return "😬";
 }
 
-function getShareMessage(score: number, distance: number, isPastPlay: boolean, url: string) {
+function getShareText(score: number, distance: number, isPastPlay: boolean) {
   const challengeLabel = isPastPlay
     ? "a past Fresno County replay challenge"
     : "today's Fresno County daily challenge";
@@ -37,12 +37,27 @@ function getShareMessage(score: number, distance: number, isPastPlay: boolean, u
 
   return [
     scoreEmoji,
-    `I scored ${score.toLocaleString()} / 5,000 on [URL].`,
+    `I scored ${score.toLocaleString()} / 5,000 on Guess The Pothole.`,
     "",
     `I was ${distance.toFixed(2)} miles away from ${challengeLabel}.`,
     "",
-    `Can you beat me? Try it here -> ${url} [URL for testing]`,
+    `Can you beat me?`,
   ].join("\n");
+}
+
+function getShareMessage(score: number, distance: number, isPastPlay: boolean, url: string) {
+  return [getShareText(score, distance, isPastPlay), "", `Can you beat me? Try it here: ${url}`].join(
+    "\n"
+  );
+}
+
+function getXShareUrl(text: string, url: string) {
+  const params = new URLSearchParams({
+    text,
+    url,
+  });
+
+  return `https://x.com/intent/post?${params.toString()}`;
 }
 
 export default function GameContainer() {
@@ -248,18 +263,27 @@ export default function GameContainer() {
   async function handleShareScore() {
     if (score === null || distance === null) return;
 
-    const shareMessage = getShareMessage(
-      score,
-      distance,
-      isPastPlay,
-      window.location.origin
-    );
+    const shareUrl = window.location.origin;
+    const shareText = getShareText(score, distance, isPastPlay);
+    const shareMessage = getShareMessage(score, distance, isPastPlay, shareUrl);
 
     try {
       if (navigator.share) {
-        await navigator.share({
-          text: shareMessage,
-        });
+        const shareData = {
+          title: "Guess The Pothole!",
+          text: shareText,
+          url: shareUrl,
+        };
+
+        if (!navigator.canShare || navigator.canShare(shareData)) {
+          await navigator.share(shareData);
+        } else {
+          await navigator.share({
+            text: shareText,
+            url: shareUrl,
+          });
+        }
+
         flashShareState("shared");
         return;
       }
@@ -280,7 +304,7 @@ export default function GameContainer() {
 
   const shareFeedback =
     shareState === "shared"
-      ? "Send it to Messages or anywhere else."
+      ? "Shared with the site link attached."
       : shareState === "copied"
       ? "Copied. Paste it into Messages, Notes, or social."
       : shareState === "error"
@@ -292,20 +316,42 @@ export default function GameContainer() {
       return null;
     }
 
+    const shareUrl = typeof window === "undefined" ? "" : window.location.origin;
+    const shareText =
+      score === null || distance === null
+        ? ""
+        : getShareText(score, distance, isPastPlay);
+    const xShareUrl = shareUrl ? getXShareUrl(shareText, shareUrl) : "#";
+
     return (
       <div className="game__share-block">
-        <motion.button
-          type="button"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.12 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={handleShareScore}
-          className="game__share-btn"
-        >
-          SHARE SCORE <i className="fa-solid fa-arrow-up-from-bracket"></i>
-        </motion.button>
+        <div className="game__share-actions">
+          <motion.button
+            type="button"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.12 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleShareScore}
+            className="game__share-btn"
+          >
+            SHARE SCORE <i className="fa-solid fa-arrow-up-from-bracket"></i>
+          </motion.button>
+          <motion.a
+            href={xShareUrl}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.18 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="game__share-btn game__share-btn--x"
+          >
+            SHARE TO X <i className="fa-brands fa-x-twitter"></i>
+          </motion.a>
+        </div>
         {shareFeedback && <div className="game__share-feedback">{shareFeedback}</div>}
       </div>
     );

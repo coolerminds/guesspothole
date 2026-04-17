@@ -25,6 +25,7 @@ export default function Home({
     <>
       <Head>
         <title>Guess That Pothole! - Fresno, CA</title>
+        <link rel="canonical" href={siteUrl} />
         <meta
           name="description"
           content="Guess where Fresno's potholes are! A daily guessing game inspired by The Price Is Right."
@@ -38,6 +39,7 @@ export default function Home({
           content="Can you guess where Fresno's worst potholes are? Play the daily guessing game — Better Roads. Safe Streets."
         />
         <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:url" content={siteUrl} />
@@ -51,6 +53,7 @@ export default function Home({
           content="Can you guess where Fresno's worst potholes are? Play the daily guessing game — Better Roads. Safe Streets."
         />
         <meta name="twitter:image" content={ogImageUrl} />
+        <meta name="twitter:image:alt" content="Guess The Pothole share card" />
       </Head>
       <GameContainer />
     </>
