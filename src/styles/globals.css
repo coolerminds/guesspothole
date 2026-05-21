@@ -104,8 +104,10 @@ a {
 .app-shell {
   min-height: 100vh;
   padding: var(--sp-6) var(--sp-4) var(--sp-8);
-  display: flex;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: var(--sp-6);
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.75) 0, rgba(255, 255, 255, 0) 34%),
     linear-gradient(180deg, #f6f7f8 0, #f1f3f5 100%);
@@ -135,6 +137,59 @@ a {
 }
 
 .app-card__brandmark {
+  width: 220px;
+  height: auto;
+}
+
+.app-card__brandmark-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.app-card__brandmark-link {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.app-card__brandmark-info {
+  position: absolute;
+  top: 8px;
+  right: -18px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 16px 30px rgba(16, 34, 53, 0.16);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.92);
+  transition: opacity 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+}
+
+.app-card__brandmark-wrap:hover .app-card__brandmark-info,
+.app-card__brandmark-wrap:focus-within .app-card__brandmark-info {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.app-card__brandmark-info:hover {
+  box-shadow: 0 18px 34px rgba(16, 34, 53, 0.2);
+}
+
+.app-card__brandmark-info:focus-visible {
+  outline: 0;
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: 0 0 0 3px var(--orange-tint-18), 0 18px 34px rgba(16, 34, 53, 0.2);
 }
 
 .app-card__title {
@@ -183,6 +238,282 @@ a {
 
 .app-card__text-link:hover {
   color: var(--navy);
+}
+
+/* ─── Campaign info + support ─── */
+
+.campaign-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1450;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 5vw, 36px);
+  background: rgba(15, 22, 32, 0.42);
+  backdrop-filter: blur(6px);
+}
+
+.campaign-modal__card {
+  position: relative;
+  width: min(100%, 540px);
+  display: grid;
+  gap: var(--sp-4);
+  padding: clamp(24px, 4vw, 34px);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: 0 26px 54px rgba(16, 34, 53, 0.24);
+}
+
+.campaign-modal__close {
+  position: absolute;
+  top: var(--sp-4);
+  right: var(--sp-4);
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-soft);
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.campaign-modal__close:hover {
+  color: var(--navy);
+}
+
+.campaign-modal__close:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px var(--orange-tint-18);
+}
+
+.campaign-modal__eyebrow,
+.campaign-support__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.campaign-modal__title,
+.campaign-support__title {
+  font-family: var(--font-display);
+  color: var(--navy);
+  line-height: 1.03;
+}
+
+.campaign-modal__title {
+  max-width: 420px;
+  font-size: clamp(1.8rem, 4vw, 2.45rem);
+}
+
+.campaign-modal__list {
+  display: grid;
+  gap: var(--sp-3);
+  padding-left: 18px;
+  color: #2f3d49;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.campaign-modal__list li::marker {
+  color: var(--orange);
+}
+
+.campaign-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.campaign-modal__action {
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 150ms ease, background 150ms ease, color 150ms ease;
+}
+
+.campaign-modal__action:hover {
+  transform: translateY(-1px);
+}
+
+.campaign-modal__action--primary {
+  background: var(--navy);
+  color: var(--surface);
+}
+
+.campaign-modal__action--primary:hover {
+  background: var(--navy-deep);
+}
+
+.campaign-modal__action--secondary {
+  background: var(--surface-soft);
+  color: var(--navy);
+}
+
+.campaign-modal__action--secondary:hover {
+  background: #dfeaf3;
+}
+
+.campaign-support {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: var(--sp-4);
+  padding: 28px 20px 22px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #edf4fb 0%, #e7f0f8 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+.campaign-support__title {
+  max-width: 520px;
+  font-size: clamp(2rem, 4.4vw, 3rem);
+}
+
+.campaign-support__copy {
+  max-width: 530px;
+  color: #324251;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.campaign-support__list {
+  width: 100%;
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.campaign-support__card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: 18px 20px;
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  text-align: left;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.campaign-support__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(16, 34, 53, 0.14);
+}
+
+.campaign-support__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background: #ffefe9;
+  color: var(--navy);
+  display: grid;
+  place-items: center;
+  font-size: 1.15rem;
+}
+
+.campaign-support__body {
+  min-width: 0;
+  display: grid;
+  gap: var(--sp-1);
+}
+
+.campaign-support__card-title {
+  color: #1f2b35;
+  font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.campaign-support__card-copy {
+  color: #5b6c7b;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.campaign-support__label {
+  white-space: nowrap;
+  color: var(--navy);
+  font-size: 0.95rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.campaign-support__plan-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--navy);
+  font-size: 0.98rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.campaign-support__plan-link:hover {
+  color: var(--navy-deep);
+}
+
+.campaign-footer {
+  width: min(100%, 760px);
+  display: grid;
+  justify-items: center;
+  gap: var(--sp-3);
+  padding: 0 var(--sp-4);
+  text-align: center;
+  color: #9babb8;
+  font-size: 0.8rem;
+}
+
+.campaign-footer__nav,
+.campaign-footer__socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 14px;
+}
+
+.campaign-footer__nav-link,
+.campaign-footer__social-link {
+  color: inherit;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.campaign-footer__nav-link:hover,
+.campaign-footer__social-link:hover {
+  color: var(--navy);
+}
+
+.campaign-footer__disclaimer,
+.campaign-footer__copyright {
+  max-width: 680px;
+  line-height: 1.55;
+}
+
+.campaign-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.campaign-footer__copyright {
+  font-weight: 800;
+  font-size: 0.76rem;
 }
 
 /* ─── Pothole viewer ─── */
@@ -264,24 +595,29 @@ a {
   display: grid;
   place-items: center;
   padding: clamp(18px, 4vw, 36px);
-  background: rgba(7, 13, 22, 0.92);
+  background: rgba(17, 24, 34, 0.84);
   backdrop-filter: blur(10px);
 }
 
 .pothole-viewer__lightbox-shell {
   position: relative;
-  width: min(92vw, 920px);
-  height: min(88vh, 1100px);
+  width: min(100%, var(--card-max));
 }
 
 .pothole-viewer__lightbox-frame {
+  width: 100%;
+  padding: 14px 14px 22px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+}
+
+.pothole-viewer__lightbox-photo {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: min(76vh, 860px);
   overflow: hidden;
-  border-radius: 24px;
-  background: #0b1220;
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.4);
+  background: #f8f8f6;
 }
 
 .pothole-viewer__lightbox-img {
@@ -290,14 +626,14 @@ a {
 
 .pothole-viewer__lightbox-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: -18px;
+  right: -18px;
   z-index: 1;
   width: 44px;
   height: 44px;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(19, 30, 44, 0.9);
   color: var(--surface);
   display: inline-flex;
   align-items: center;
@@ -308,7 +644,7 @@ a {
 }
 
 .pothole-viewer__lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: #182436;
   transform: scale(1.04);
 }
 
@@ -1035,6 +1371,7 @@ a {
 @media (max-width: 768px) {
   .app-shell {
     padding: var(--sp-3);
+    gap: var(--sp-5);
     background: linear-gradient(180deg, #f6f7f8 0, #f1f3f5 100%);
   }
 
@@ -1053,10 +1390,81 @@ a {
     width: 260px;
   }
 
+  .app-card__brandmark-info {
+    top: 4px;
+    right: -12px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+  }
+
   .app-card__copy {
     max-width: var(--card-max);
     font-size: 0.7rem;
     gap: var(--sp-2);
+  }
+
+  .campaign-modal__card {
+    padding: 24px 18px 20px;
+    border-radius: 24px;
+  }
+
+  .campaign-modal__title {
+    max-width: none;
+    padding-right: 26px;
+    font-size: 1.85rem;
+  }
+
+  .campaign-modal__actions {
+    flex-direction: column;
+  }
+
+  .campaign-modal__action {
+    width: 100%;
+  }
+
+  .campaign-support {
+    padding: 24px 14px 18px;
+    border-radius: 24px;
+  }
+
+  .campaign-support__title {
+    font-size: 2.05rem;
+  }
+
+  .campaign-support__card {
+    grid-template-columns: 44px minmax(0, 1fr);
+    align-items: start;
+    gap: var(--sp-3);
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .campaign-support__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-size: 1rem;
+  }
+
+  .campaign-support__label {
+    grid-column: 2;
+    justify-self: end;
+    margin-top: var(--sp-2);
+    font-size: 0.86rem;
+  }
+
+  .campaign-footer {
+    gap: var(--sp-2);
+    padding: 0 var(--sp-2);
+    font-size: 0.72rem;
+  }
+
+  .campaign-footer__nav-link,
+  .campaign-footer__social-link {
+    font-size: 0.72rem;
   }
 
   .pothole-viewer__frame,
@@ -1079,16 +1487,19 @@ a {
 
   .pothole-viewer__lightbox-shell {
     width: 100%;
-    height: min(82vh, 760px);
   }
 
   .pothole-viewer__lightbox-frame {
-    border-radius: 18px;
+    padding: 10px 10px 16px;
+  }
+
+  .pothole-viewer__lightbox-photo {
+    height: min(72vh, 720px);
   }
 
   .pothole-viewer__lightbox-close {
-    top: 10px;
-    right: 10px;
+    top: -12px;
+    right: -4px;
     width: 40px;
     height: 40px;
   }

@@ -1,7 +1,6 @@
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import GameContext, { GamePhase } from "./GameContext";
 import {
   Pothole,
@@ -10,6 +9,10 @@ import {
   calculateScore,
 } from "@/data/potholes";
 import { getOrCreateVisitorId, trackVisitorEvent } from "@/lib/visitorClient";
+import AppBrandmark from "./AppBrandmark";
+import CampaignFooter from "./CampaignFooter";
+import CampaignInfoModal from "./CampaignInfoModal";
+import CampaignSupportPanel from "./CampaignSupportPanel";
 import PotholeViewer from "./PotholeViewer";
 import ScoreDisplay from "./ScoreDisplay";
 import Leaderboard from "./Leaderboard";
@@ -65,6 +68,7 @@ export default function GameContainer() {
   const [guessPos, setGuessPos] = useState<[number, number] | null>(null);
   const [score, setScore] = useState<number | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
+  const [isCampaignInfoOpen, setIsCampaignInfoOpen] = useState(false);
   const [shareState, setShareState] = useState<ShareState>("idle");
   const shareResetRef = useRef<number | null>(null);
   const [activePothole, setActivePothole] = useState<Pothole | null>(null);
@@ -386,13 +390,7 @@ export default function GameContainer() {
               className="app-shell__stage"
             >
               <div className="app-card app-card--play">
-                <Image
-                  src="/brand/brss-color-light.svg"
-                  alt="Better Roads. Safe Streets."
-                  className="app-card__brandmark"
-                  width={220}
-                  height={72}
-                />
+                <AppBrandmark onInfoClick={() => setIsCampaignInfoOpen(true)} />
                 <h1 className="app-card__title">Guess The Pothole!</h1>
                 <div className="app-card__copy">
                   {PANEL_COPY.map((line) => (
@@ -427,13 +425,7 @@ export default function GameContainer() {
               className="app-shell__stage"
             >
               <div className="app-card app-card--score">
-                <Image
-                  src="/brand/brss-color-light.svg"
-                  alt="Better Roads. Safe Streets."
-                  className="app-card__brandmark"
-                  width={220}
-                  height={72}
-                />
+                <AppBrandmark onInfoClick={() => setIsCampaignInfoOpen(true)} />
                 <h1 className="app-card__title">Guess The Pothole</h1>
                 <div className="app-card__copy">
                   <p>Thanks for Playing!</p>
@@ -441,6 +433,7 @@ export default function GameContainer() {
                 <ScoreDisplay />
                 <FresnoMap />
                 {renderShareActions()}
+                <CampaignSupportPanel />
                 <button
                   type="button"
                   onClick={goToLeaderboard}
@@ -462,16 +455,11 @@ export default function GameContainer() {
               className="app-shell__stage"
             >
               <div className="app-card app-card--leaderboard">
-                <Image
-                  src="/brand/brss-color-light.svg"
-                  alt="Better Roads. Safe Streets."
-                  className="app-card__brandmark"
-                  width={220}
-                  height={72}
-                />
+                <AppBrandmark onInfoClick={() => setIsCampaignInfoOpen(true)} />
                 <h1 className="app-card__title">Guess The Pothole</h1>
                 <Leaderboard />
                 {renderShareActions()}
+                <CampaignSupportPanel />
                 <button
                   type="button"
                   onClick={restart}
@@ -483,6 +471,11 @@ export default function GameContainer() {
             </motion.section>
           )}
         </AnimatePresence>
+        <CampaignFooter />
+        <CampaignInfoModal
+          isOpen={isCampaignInfoOpen}
+          onClose={() => setIsCampaignInfoOpen(false)}
+        />
       </main>
     </GameContext.Provider>
   );

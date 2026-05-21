@@ -1781,7 +1781,7 @@
     "visitorId": "dd9d285e-e62c-49cd-94d9-cc5ffe8bc671",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
     "firstVisitedAt": "2026-04-10T18:29:21.479Z",
-    "lastVisitedAt": "2026-05-21T17:44:20.601Z",
+    "lastVisitedAt": "2026-05-21T18:14:53.648Z",
     "lastIp": "::1",
     "ipAddresses": [
       "::1"
@@ -1942,6 +1942,60 @@
       {
         "type": "visited",
         "at": "2026-05-21T17:44:20.601Z",
+        "ip": "::1",
+        "potholeId": "pot5",
+        "potholeDate": "2026-04-20",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-21T17:58:43.647Z",
+        "ip": "::1",
+        "potholeId": "pot5",
+        "potholeDate": "2026-04-20",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-21T18:02:47.328Z",
+        "ip": "::1",
+        "potholeId": "pot5",
+        "potholeDate": "2026-04-20",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-21T18:03:07.016Z",
+        "ip": "::1",
+        "potholeId": "pot5",
+        "potholeDate": "2026-04-20",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-21T18:03:07.018Z",
+        "ip": "::1",
+        "potholeId": "pot5",
+        "potholeDate": "2026-04-20",
+        "isPastPlay": false,
+        "guessLat": 36.78010244365763,
+        "guessLng": -119.7748374938965
+      },
+      {
+        "type": "submitted_guess",
+        "at": "2026-05-21T18:03:08.119Z",
+        "ip": "::1",
+        "potholeId": "pot5",
+        "potholeDate": "2026-04-20",
+        "isPastPlay": false,
+        "score": 2715,
+        "distanceMiles": 4.569097207295216,
+        "guessLat": 36.78010244365763,
+        "guessLng": -119.7748374938965
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-21T18:14:53.648Z",
         "ip": "::1",
         "potholeId": "pot5",
         "potholeDate": "2026-04-20",

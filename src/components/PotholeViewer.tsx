@@ -98,14 +98,16 @@ export default function PotholeViewer() {
                 <i className="fa-solid fa-xmark"></i>
               </button>
               <div className="pothole-viewer__lightbox-frame">
-                <Image
-                  src={todaysPothole.image}
-                  alt={`Full view of pothole ${todaysPothole.id}`}
-                  fill
-                  sizes="92vw"
-                  className="pothole-viewer__lightbox-img"
-                  priority
-                />
+                <div className="pothole-viewer__lightbox-photo">
+                  <Image
+                    src={todaysPothole.image}
+                    alt={`Full view of pothole ${todaysPothole.id}`}
+                    fill
+                    sizes="(max-width: 768px) calc(100vw - 56px), 620px"
+                    className="pothole-viewer__lightbox-img"
+                    priority
+                  />
+                </div>
               </div>
             </motion.div>
           </motion.div>
