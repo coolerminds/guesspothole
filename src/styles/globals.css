@@ -207,6 +207,38 @@ a {
   object-fit: cover;
 }
 
+.pothole-viewer__expand-btn {
+  position: absolute;
+  right: var(--sp-3);
+  bottom: var(--sp-3);
+  z-index: 1;
+  min-height: 40px;
+  padding: 0 var(--sp-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: rgba(9, 28, 46, 0.88);
+  color: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(9, 28, 46, 0.24);
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+.pothole-viewer__expand-btn:hover {
+  background: var(--navy-deep);
+  transform: translateY(-1px);
+}
+
+.pothole-viewer__expand-btn:focus-visible,
+.pothole-viewer__lightbox-close:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(255, 97, 45, 0.28);
+}
+
 .pothole-viewer__hint {
   display: inline-flex;
   align-items: center;
@@ -223,6 +255,61 @@ a {
 
 .pothole-viewer__hint i {
   color: var(--ink);
+}
+
+.pothole-viewer__lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 36px);
+  background: rgba(7, 13, 22, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.pothole-viewer__lightbox-shell {
+  position: relative;
+  width: min(92vw, 920px);
+  height: min(88vh, 1100px);
+}
+
+.pothole-viewer__lightbox-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #0b1220;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.4);
+}
+
+.pothole-viewer__lightbox-img {
+  object-fit: contain;
+}
+
+.pothole-viewer__lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.pothole-viewer__lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: scale(1.04);
 }
 
 /* ─── Fresno map ─── */
@@ -976,6 +1063,34 @@ a {
   .fresno-map__container {
     border-radius: 18px;
     aspect-ratio: 1.14 / 1;
+  }
+
+  .pothole-viewer__expand-btn {
+    right: var(--sp-2);
+    bottom: var(--sp-2);
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 0.74rem;
+  }
+
+  .pothole-viewer__lightbox {
+    padding: 14px;
+  }
+
+  .pothole-viewer__lightbox-shell {
+    width: 100%;
+    height: min(82vh, 760px);
+  }
+
+  .pothole-viewer__lightbox-frame {
+    border-radius: 18px;
+  }
+
+  .pothole-viewer__lightbox-close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
   }
 
   .fresno-map__guess-btn {
