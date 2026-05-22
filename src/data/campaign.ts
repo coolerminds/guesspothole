@@ -20,27 +20,10 @@ export const CAMPAIGN_MEASURE_POINTS = [
 
 export const CAMPAIGN_SUPPORT_ACTIONS = [
   {
-    title: "Volunteer",
-    description: "Become a volunteer with Better Roads, Safe Streets.",
-    label: "Get Involved",
-    href: CAMPAIGN_LINKS.getInvolved,
-    iconClassName: "fa-solid fa-seedling",
-  },
-  {
-    title: "Endorse Our Efforts",
-    description:
-      "Show your support by endorsing the citizen-led effort for a better transportation future. Add your name to our list of supporters.",
-    label: "Supporters",
-    href: CAMPAIGN_LINKS.supporters,
-    iconClassName: "fa-solid fa-bullhorn",
-  },
-  {
     title: "Donate",
     description:
       "Your financial contribution will help ensure we have what we need to reach voters and win in November!",
-    label: "Donate",
     href: CAMPAIGN_LINKS.donate,
-    iconClassName: "fa-regular fa-credit-card",
   },
 ] as const;
 
@@ -56,10 +39,6 @@ export const CAMPAIGN_FOOTER_LINKS = [
   {
     label: "Get Involved",
     href: CAMPAIGN_LINKS.getInvolved,
-  },
-  {
-    label: "Supporters",
-    href: CAMPAIGN_LINKS.supporters,
   },
   {
     label: "Donate",

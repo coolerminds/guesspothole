@@ -8,6 +8,7 @@ import {
   getDistanceMiles,
   calculateScore,
 } from "@/data/potholes";
+import { CAMPAIGN_LINKS } from "@/data/campaign";
 import { getOrCreateVisitorId, trackVisitorEvent } from "@/lib/visitorClient";
 import AppBrandmark from "./AppBrandmark";
 import CampaignFooter from "./CampaignFooter";
@@ -19,48 +20,29 @@ import Leaderboard from "./Leaderboard";
 
 const FresnoMap = dynamic(() => import("./FresnoMap"), { ssr: false });
 const PANEL_COPY = [
-  "You'll be shown a photo of a real pothole in Fresno County. Choose and click a location on the map where you think the pothole is at.",
-  "The closer your guess, the higher your score. Every 24 hours there will be a new pothole to find.",
+  "Drop the cone over a location on the map to guess where the pictured pothole is located within Fresno County. It could be right down YOUR street!",
+  "Get a high-score and share with your friends. There's a new puzzle to try every 24 hours.",
 ];
 
 type ShareState = "idle" | "shared" | "copied" | "error";
 
-function getScoreEmoji(score: number) {
-  if (score >= 4500) return "🏆";
-  if (score >= 3000) return "🎯";
-  if (score >= 1500) return "👍";
-  return "😬";
-}
-
-function getShareText(score: number, distance: number, isPastPlay: boolean) {
+function getShareMessage(
+  score: number,
+  distance: number,
+  isPastPlay: boolean,
+  url: string
+) {
   const challengeLabel = isPastPlay
     ? "a past Fresno County replay challenge"
     : "today's Fresno County daily challenge";
-  const scoreEmoji = getScoreEmoji(score);
 
   return [
-    scoreEmoji,
-    `I scored ${score.toLocaleString()} / 5,000 on Guess That Pothole!`,
+    `I scored ${score.toLocaleString()} / 5,000 on ${url}`,
     "",
     `I was ${distance.toFixed(2)} miles away from ${challengeLabel}.`,
     "",
-    `Can you beat me?`,
+    `Can you beat me? Try it here -> ${url}`,
   ].join("\n");
-}
-
-function getShareMessage(score: number, distance: number, isPastPlay: boolean, url: string) {
-  return [getShareText(score, distance, isPastPlay), "", `Can you beat me? Try it here: ${url}`].join(
-    "\n"
-  );
-}
-
-function getXShareUrl(text: string, url: string) {
-  const params = new URLSearchParams({
-    text,
-    url,
-  });
-
-  return `https://x.com/intent/post?${params.toString()}`;
 }
 
 export default function GameContainer() {
@@ -124,6 +106,14 @@ export default function GameContainer() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("app-cursor--placed", guessPos !== null);
+
+    return () => {
+      document.body.classList.remove("app-cursor--placed");
+    };
+  }, [guessPos]);
 
   useEffect(() => {
     if (canShowShareActions) {
@@ -225,6 +215,7 @@ export default function GameContainer() {
 
     setDistance(dist);
     setScore(pts);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setPhase("SCORED");
   }
 
@@ -267,25 +258,17 @@ export default function GameContainer() {
   async function handleShareScore() {
     if (score === null || distance === null) return;
 
-    const shareUrl = window.location.origin;
-    const shareText = getShareText(score, distance, isPastPlay);
+    const shareUrl = new URL("/", window.location.origin).toString();
     const shareMessage = getShareMessage(score, distance, isPastPlay, shareUrl);
 
     try {
       if (navigator.share) {
-        const shareData = {
-          title: "Guess That Pothole!",
-          text: shareText,
-          url: shareUrl,
-        };
+        const shareData = { text: shareMessage };
 
         if (!navigator.canShare || navigator.canShare(shareData)) {
           await navigator.share(shareData);
         } else {
-          await navigator.share({
-            text: shareText,
-            url: shareUrl,
-          });
+          await navigator.share(shareData);
         }
 
         flashShareState("shared");
@@ -320,13 +303,6 @@ export default function GameContainer() {
       return null;
     }
 
-    const shareUrl = typeof window === "undefined" ? "" : window.location.origin;
-    const shareText =
-      score === null || distance === null
-        ? ""
-        : getShareText(score, distance, isPastPlay);
-    const xShareUrl = shareUrl ? getXShareUrl(shareText, shareUrl) : "#";
-
     return (
       <div className="game__share-block">
         <div className="game__share-actions">
@@ -342,19 +318,6 @@ export default function GameContainer() {
           >
             SHARE SCORE <i className="fa-solid fa-arrow-up-from-bracket"></i>
           </motion.button>
-          <motion.a
-            href={xShareUrl}
-            target="_blank"
-            rel="noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.18 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="game__share-btn game__share-btn--x"
-          >
-            SHARE TO X <i className="fa-brands fa-x-twitter"></i>
-          </motion.a>
         </div>
         {shareFeedback && <div className="game__share-feedback">{shareFeedback}</div>}
       </div>
@@ -393,9 +356,19 @@ export default function GameContainer() {
                 <AppBrandmark onInfoClick={() => setIsCampaignInfoOpen(true)} />
                 <h1 className="app-card__title">Guess That Pothole!</h1>
                 <div className="app-card__copy">
-                  {PANEL_COPY.map((line) => (
-                    <p key={line}>{line}</p>
-                  ))}
+                  <p>{PANEL_COPY[0]}</p>
+                  <p>{PANEL_COPY[1]}</p>
+                  <p>
+                    Support Better Roads, Safe Streets in Fresno County!{" "}
+                    <a
+                      href={CAMPAIGN_LINKS.plan}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="app-card__copy-link"
+                    >
+                      Learn More!
+                    </a>
+                  </p>
                 </div>
                 {isPastPlay && (
                   <div className="app-card__note">

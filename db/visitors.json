@@ -1781,7 +1781,7 @@
     "visitorId": "dd9d285e-e62c-49cd-94d9-cc5ffe8bc671",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
     "firstVisitedAt": "2026-04-10T18:29:21.479Z",
-    "lastVisitedAt": "2026-05-21T18:14:53.648Z",
+    "lastVisitedAt": "2026-05-22T21:38:38.810Z",
     "lastIp": "::1",
     "ipAddresses": [
       "::1"
@@ -1790,8 +1790,8 @@
     "hasStartedGame": true,
     "hasPlacedGuessPin": true,
     "hasSubmittedGuess": true,
-    "lastPotholeId": "pot5",
-    "lastPotholeDate": "2026-04-20",
+    "lastPotholeId": "pot6",
+    "lastPotholeDate": "2026-04-19",
     "events": [
       {
         "type": "visited",
@@ -2000,6 +2000,442 @@
         "potholeId": "pot5",
         "potholeDate": "2026-04-20",
         "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T20:20:21.837Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T20:20:43.186Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T20:20:43.188Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.941008872514345,
+        "guessLng": -119.62463378906251
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T20:45:25.480Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T20:45:50.258Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T20:45:50.260Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.68804858116688,
+        "guessLng": -119.56832885742189
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:09:29.311Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:14:19.780Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T21:19:08.760Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T21:19:08.763Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.77072035981485,
+        "guessLng": -119.70359802246095
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:19:14.697Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T21:19:21.880Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T21:19:21.882Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.767339928605494,
+        "guessLng": -119.78805541992189
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:27:29.049Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T21:27:36.492Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T21:27:36.494Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.833058828156624,
+        "guessLng": -119.82513427734376
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:27:40.931Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T21:27:51.546Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T21:27:51.547Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.83554770074749,
+        "guessLng": -119.69467163085939
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:27:55.808Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T21:28:00.148Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T21:28:00.149Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.853139843597546,
+        "guessLng": -119.73587036132814
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:28:21.133Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T21:28:38.965Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T21:28:38.968Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.84225336867883,
+        "guessLng": -119.76728439331056
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:30:43.355Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:30:43.355Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:31:05.801Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T21:31:07.572Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T21:31:07.573Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.767339928605494,
+        "guessLng": -119.70840454101564
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:31:12.983Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "submitted_guess",
+        "at": "2026-05-22T21:31:42.704Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "score": 1292,
+        "distanceMiles": 7.415524971904097,
+        "guessLat": 36.785020791057136,
+        "guessLng": -119.68162536621095
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:33:23.980Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:33:53.145Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T21:33:55.003Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T21:33:55.006Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.855338576862685,
+        "guessLng": -119.75509643554689
+      },
+      {
+        "type": "submitted_guess",
+        "at": "2026-05-22T21:34:00.281Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "score": 3355,
+        "distanceMiles": 3.2905445147776127,
+        "guessLat": 36.83554770074749,
+        "guessLng": -119.73587036132814
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:34:12.972Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:34:12.984Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:36:16.768Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T21:36:19.519Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T21:36:19.521Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.84434427809335,
+        "guessLng": -119.71115112304689
+      },
+      {
+        "type": "submitted_guess",
+        "at": "2026-05-22T21:36:25.624Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "score": 2689,
+        "distanceMiles": 4.6217434494167655,
+        "guessLat": 36.84434427809335,
+        "guessLng": -119.71115112304689
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:36:41.085Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:36:41.086Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:36:41.087Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:36:52.503Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:38:36.600Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "started_game",
+        "at": "2026-05-22T21:38:38.808Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "placed_guess_pin",
+        "at": "2026-05-22T21:38:38.810Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false,
+        "guessLat": 36.86193439716926,
+        "guessLng": -119.74136352539064
       }
     ]
   },

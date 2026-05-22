@@ -4,41 +4,28 @@ import {
 } from "@/data/campaign";
 
 export default function CampaignSupportPanel() {
+  const donateAction = CAMPAIGN_SUPPORT_ACTIONS[0];
+
   return (
     <section className="campaign-support" aria-labelledby="campaign-support-title">
-      <div className="campaign-support__eyebrow">
-        Support Better Roads, Safe Streets
-      </div>
       <h2 id="campaign-support-title" className="campaign-support__title">
         Support Better Roads, Safe Streets Today!
       </h2>
-      <p className="campaign-support__copy">
-        The campaign for Better Roads, Safe Streets is needed to continue the
-        funding to fix potholes and repair neighborhood streets without raising
-        taxes and requiring strong citizen oversight and annual fiscal audits.
-      </p>
 
       <div className="campaign-support__list">
-        {CAMPAIGN_SUPPORT_ACTIONS.map((action) => (
-          <a
-            key={action.title}
-            href={action.href}
-            target="_blank"
-            rel="noreferrer"
-            className="campaign-support__card"
-          >
-            <div className="campaign-support__icon">
-              <i className={action.iconClassName}></i>
+        <a
+          href={donateAction.href}
+          target="_blank"
+          rel="noreferrer"
+          className="campaign-support__card"
+        >
+          <div className="campaign-support__body">
+            <div className="campaign-support__card-title">{donateAction.title}</div>
+            <div className="campaign-support__card-copy">
+              {donateAction.description}
             </div>
-            <div className="campaign-support__body">
-              <div className="campaign-support__card-title">{action.title}</div>
-              <div className="campaign-support__card-copy">
-                {action.description}
-              </div>
-            </div>
-            <div className="campaign-support__label">{action.label}</div>
-          </a>
-        ))}
+          </div>
+        </a>
       </div>
 
       <a
