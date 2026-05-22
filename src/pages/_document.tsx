@@ -4,6 +4,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link rel="icon" href="/favicon.webp" type="image/webp" sizes="32x32" />
+        <link rel="shortcut icon" href="/favicon.webp" type="image/webp" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
         <link
           rel="stylesheet"
           href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"

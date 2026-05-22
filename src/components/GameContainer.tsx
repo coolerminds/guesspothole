@@ -40,7 +40,7 @@ function getShareText(score: number, distance: number, isPastPlay: boolean) {
 
   return [
     scoreEmoji,
-    `I scored ${score.toLocaleString()} / 5,000 on Guess The Pothole.`,
+    `I scored ${score.toLocaleString()} / 5,000 on Guess That Pothole!`,
     "",
     `I was ${distance.toFixed(2)} miles away from ${challengeLabel}.`,
     "",
@@ -274,7 +274,7 @@ export default function GameContainer() {
     try {
       if (navigator.share) {
         const shareData = {
-          title: "Guess The Pothole!",
+          title: "Guess That Pothole!",
           text: shareText,
           url: shareUrl,
         };
@@ -391,7 +391,7 @@ export default function GameContainer() {
             >
               <div className="app-card app-card--play">
                 <AppBrandmark onInfoClick={() => setIsCampaignInfoOpen(true)} />
-                <h1 className="app-card__title">Guess The Pothole!</h1>
+                <h1 className="app-card__title">Guess That Pothole!</h1>
                 <div className="app-card__copy">
                   {PANEL_COPY.map((line) => (
                     <p key={line}>{line}</p>
@@ -426,7 +426,7 @@ export default function GameContainer() {
             >
               <div className="app-card app-card--score">
                 <AppBrandmark onInfoClick={() => setIsCampaignInfoOpen(true)} />
-                <h1 className="app-card__title">Guess The Pothole</h1>
+                <h1 className="app-card__title">Guess That Pothole!</h1>
                 <div className="app-card__copy">
                   <p>Thanks for Playing!</p>
                 </div>
@@ -456,7 +456,7 @@ export default function GameContainer() {
             >
               <div className="app-card app-card--leaderboard">
                 <AppBrandmark onInfoClick={() => setIsCampaignInfoOpen(true)} />
-                <h1 className="app-card__title">Guess The Pothole</h1>
+                <h1 className="app-card__title">Guess That Pothole!</h1>
                 <Leaderboard />
                 {renderShareActions()}
                 <CampaignSupportPanel />

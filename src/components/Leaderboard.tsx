@@ -192,7 +192,7 @@ export default function Leaderboard() {
 
       {!isPastPlay && (
         <div className="leaderboard__comeback">
-          Come back tomorrow for a new Guess The Pothole game!
+          Come back tomorrow for a new Guess That Pothole! game!
         </div>
       )}
     </motion.div>

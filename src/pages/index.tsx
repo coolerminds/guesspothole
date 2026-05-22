@@ -33,7 +33,7 @@ export default function Home({
 
         {/* Open Graph (Facebook, iMessage, Slack, Discord, etc.) */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Guess The Pothole! – Daily Guessing Game" />
+        <meta property="og:title" content="Guess That Pothole! – Daily Guessing Game" />
         <meta
           property="og:description"
           content="Can you guess where Fresno's worst potholes are? Play the daily guessing game — Better Roads. Safe Streets."
@@ -43,17 +43,17 @@ export default function Home({
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:url" content={siteUrl} />
-        <meta property="og:site_name" content="Guess The Pothole!" />
+        <meta property="og:site_name" content="Guess That Pothole!" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Guess The Pothole! – Daily Guessing Game" />
+        <meta name="twitter:title" content="Guess That Pothole! – Daily Guessing Game" />
         <meta
           name="twitter:description"
           content="Can you guess where Fresno's worst potholes are? Play the daily guessing game — Better Roads. Safe Streets."
         />
         <meta name="twitter:image" content={ogImageUrl} />
-        <meta name="twitter:image:alt" content="Guess The Pothole share card" />
+        <meta name="twitter:image:alt" content="Guess That Pothole share card" />
       </Head>
       <GameContainer />
     </>

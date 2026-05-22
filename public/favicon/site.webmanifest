@@ -1,11 +1,11 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Guess That Pothole!",
+    "short_name": "Guess That Pothole!",
     "icons": [
         {
-            "src": "/android-chrome-96x96.png",
-            "sizes": "96x96",
-            "type": "image/png"
+            "src": "/favicon.webp",
+            "sizes": "32x32",
+            "type": "image/webp"
         }
     ],
     "theme_color": "#ffffff",
