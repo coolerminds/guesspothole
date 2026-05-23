@@ -263,12 +263,15 @@ export default function GameContainer() {
 
     try {
       if (navigator.share) {
-        const shareData = { text: shareMessage };
+        const shareData = {
+          text: shareMessage,
+          url: shareUrl,
+        };
 
         if (!navigator.canShare || navigator.canShare(shareData)) {
           await navigator.share(shareData);
         } else {
-          await navigator.share(shareData);
+          await navigator.share({ text: shareMessage });
         }
 
         flashShareState("shared");

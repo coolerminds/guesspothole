@@ -1781,7 +1781,7 @@
     "visitorId": "dd9d285e-e62c-49cd-94d9-cc5ffe8bc671",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
     "firstVisitedAt": "2026-04-10T18:29:21.479Z",
-    "lastVisitedAt": "2026-05-22T21:38:38.810Z",
+    "lastVisitedAt": "2026-05-22T21:49:13.077Z",
     "lastIp": "::1",
     "ipAddresses": [
       "::1"
@@ -2436,6 +2436,30 @@
         "isPastPlay": false,
         "guessLat": 36.86193439716926,
         "guessLng": -119.74136352539064
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:49:13.031Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:49:13.036Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
+      },
+      {
+        "type": "visited",
+        "at": "2026-05-22T21:49:13.077Z",
+        "ip": "::1",
+        "potholeId": "pot6",
+        "potholeDate": "2026-04-19",
+        "isPastPlay": false
       }
     ]
   },
